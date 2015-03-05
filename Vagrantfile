@@ -43,6 +43,8 @@ Vagrant.configure(2) do |config|
     config.vm.provision "shell", path: "recipes/ioncube.sh"
     config.vm.provision "shell", path: "recipes/pcre.sh"
     config.vm.provision "shell", path: "recipes/imap.sh"
+    config.vm.provision "shell", path: "recipes/icu.sh"
+    config.vm.provision "shell", path: "recipes/komodo.sh"
     #freetds
     #instant client
 

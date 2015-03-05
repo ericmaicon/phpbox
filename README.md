@@ -12,7 +12,7 @@ This project automates the setup of a development and testing environment for PH
 
 ## Setup
 
-    $ git clone --recursive https://github.com/ericmaicon/phpbox.git
+    $ git clone https://github.com/ericmaicon/phpbox.git
     $ cd phpbox
     $ vagrant up
 
@@ -34,7 +34,10 @@ This project automates the setup of a development and testing environment for PH
 - mcrypt
 - PCRE
 - IMAP
+- ICU
 
+- Komodo Xdebug
+- Komodo proxy
 - Ioncube
 - PHP 5.5
 ```

@@ -14,7 +14,7 @@ else
                 --with-zlib \
                 --with-zlib-dir=/usr \
                 --with-curl=/usr/lib \
-                --with-openssl=/usr/bin/openssl/ \
+                --with-openssl \
                 --with-pdo-pgsql \
                 --with-jpeg-dir=/usr \
                 --with-freetype-dir=/usr \
@@ -25,7 +25,7 @@ else
                 --with-imap=/usr/local/imap \
                 --with-imap-ssl=/usr \
                 --with-mcrypt=/usr/local/mcrypt/ \
-                --with-icu-dir=/usr \
+                --with-icu-dir=/usr/local/ \
                 --with-libxml-dir=/opt/xml2 \
                 --with-pdo-sqlite \
                 --with-gd \
