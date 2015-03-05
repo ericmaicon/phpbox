@@ -20,13 +20,12 @@ This project automates the setup of a development and testing environment for PH
 
 - Debian 7.6 64bit
 
+- pkg-config
+
 - LibXML
 - Curl
 - OpenSSL
 - zLib
-- ncurses
-- pkg-config
-- libXpm
 - XSTL
 - JPEG
 - Free Type
@@ -35,6 +34,8 @@ This project automates the setup of a development and testing environment for PH
 - PCRE
 - IMAP
 - ICU
+
+- ncurses
 
 - Komodo Xdebug
 - Komodo proxy
@@ -93,6 +94,8 @@ This project automates the setup of a development and testing environment for PH
 - Mongo
 - FreeTDS
 - Instant Client
+
+- libXpm
 
 - PHP
 ```
