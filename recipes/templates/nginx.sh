@@ -6,6 +6,8 @@ NAME=nginx
 DESC=nginx
 pid=/var/lock/subsys/nginx
 
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
 test -x $DAEMON || exit 0
 
 # Include nginx defaults if available

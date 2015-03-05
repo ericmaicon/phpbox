@@ -18,6 +18,7 @@ else
     cp /var/www/recipes/templates/postgresql.sh /etc/init.d/postgresql
     chmod +x /etc/init.d/postgresql
 
+    update-rc.d postgresql defaults
     /etc/init.d/postgresql start
 fi
 
@@ -29,6 +30,7 @@ cp /var/www/recipes/templates/php-fpm.sh /etc/init.d/php-fpm
 
 chmod +x /etc/init.d/php-fpm
 
+update-rc.d php-fpm defaults
 /etc/init.d/php-fpm start
 
 #Nginx
@@ -41,7 +43,7 @@ cp /var/www/recipes/templates/nginx.sh /etc/init.d/nginx
 
 chmod +x /etc/init.d/nginx
 
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+update-rc.d nginx defaults
 /etc/init.d/nginx start
 
 #debug

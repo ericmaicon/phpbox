@@ -14,7 +14,7 @@ Vagrant.configure(2) do |config|
     end
 
     config.vm.provision "shell", inline: "yes | aptitude update"
-    config.vm.provision "shell", inline: "yes | aptitude install build-essential"
+    config.vm.provision "shell", inline: "yes | aptitude install vim build-essential"
 
     #required by libxpm
     #config.vm.provision "shell", inline: "yes | aptitude install libx11-dev"
