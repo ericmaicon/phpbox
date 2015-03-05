@@ -28,6 +28,10 @@ Vagrant.configure(2) do |config|
     #required by php curl
     config.vm.provision "shell", inline: "yes | aptitude install libcurl4-gnutls-dev"
 
+    #required by phpize
+    config.vm.provision "shell", inline: "yes | aptitude install autoconf"
+
+
     config.vm.provision "shell", path: "recipes/libxml.sh"
     #config.vm.provision "shell", path: "recipes/curl.sh"
     config.vm.provision "shell", path: "recipes/openssl.sh"
