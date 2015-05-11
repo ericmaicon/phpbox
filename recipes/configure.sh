@@ -1,10 +1,23 @@
 #!/bin/sh
 
 #MySQL
-/etc/init.d/mysql start
+if [ -f /etc/my.cnf ]; then
+    echo "MySQL already configured"
+else
+    echo "Installing MySQL"
+
+    cp /var/www/recipes/templates/my.cnf /etc/my.cnf
+    /usr/local/mysql/bin/mysqld_safe --user=mysql &
+    /usr/local/mysql/bin/mysqladmin -u root password "test"
+    /usr/local/mysql/bin/mysql --user=root --pasword=test -e "grant all on *.* to root@'%' identified by 'test'; flush privileges;"
+    cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
+    chmod +x /etc/init.d/mysql
+    update-rc.d mysql defaults
+    /etc/init.d/mysql stop
+    /etc/init.d/mysql start
+fi
 
 #PostgreSQL
-
 if id -u "pgsql" >/dev/null 2>&1; then
     echo "PostgreSQL already configured"
 else
@@ -14,12 +27,13 @@ else
     mkdir /usr/local/postgres/data
     chown -R pgsql:pgsql /usr/local/postgres
 
-    su - pgsql -c 'initdb -U pgsql -D /usr/local/postgres/data --locale=en_US.UTF-8'
+    sudo -u pgsql initdb -U pgsql -D /usr/local/postgres/data --locale=en_US.UTF-8
 
     mv /usr/local/postgres/data/postgresql.conf /usr/local/postgres/data/postgresql.conf.default
     cp /var/www/recipes/templates/postgresql.conf /usr/local/postgres/data/postgresql.conf
     cp /var/www/recipes/templates/postgresql.sh /etc/init.d/postgresql
     chmod +x /etc/init.d/postgresql
+    sysctl -w kernel.shmmax=2147483648
 
     update-rc.d postgresql defaults
     /etc/init.d/postgresql start

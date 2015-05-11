@@ -18,7 +18,4 @@ else
     scripts/mysql_install_db --user=mysql
     chown -R root .
     chown -R mysql data
-    cp support-files/my-default.cnf /etc/my.cnf
-    bin/mysqld_safe --user=mysql &
-    cp support-files/mysql.server /etc/init.d/mysql
 fi
