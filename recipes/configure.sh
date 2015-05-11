@@ -53,3 +53,4 @@ update-rc.d nginx defaults
 cp /var/www/recipes/templates/debug.sh /usr/bin/debug
 
 chmod +x /usr/bin/debug
+debug &

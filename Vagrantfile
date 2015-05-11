@@ -17,9 +17,6 @@ Vagrant.configure(2) do |config|
     config.vm.provision "shell", inline: "yes | sudo aptitude update"
     config.vm.provision "shell", inline: "yes | sudo aptitude install vim build-essential"
 
-    #required by libxpm
-    #config.vm.provision "shell", inline: "yes | sudo aptitude install libx11-dev"
-
     #required by mcrypt
     config.vm.provision "shell", inline: "yes | sudo aptitude install libltdl-dev"
 
@@ -41,8 +38,6 @@ Vagrant.configure(2) do |config|
     config.vm.provision "shell", path: "recipes/zlib.sh"
     config.vm.provision "shell", path: "recipes/ncurses.sh"
     config.vm.provision "shell", path: "recipes/pkgconfig.sh"
-    #config.vm.provision "shell", path: "recipes/libxpm.sh"
-    config.vm.provision "shell", path: "recipes/xstl.sh"
     config.vm.provision "shell", path: "recipes/jpeg.sh"
     config.vm.provision "shell", path: "recipes/freetype.sh"
     config.vm.provision "shell", path: "recipes/libpng.sh"
@@ -59,11 +54,13 @@ Vagrant.configure(2) do |config|
     config.vm.provision "shell", path: "recipes/mysql.sh"
     config.vm.provision "shell", path: "recipes/postgresql.sh"
     #mongo
-    #mysql
 
     #PHP + NGINX
     config.vm.provision "shell", path: "recipes/php.sh"
     config.vm.provision "shell", path: "recipes/nginx.sh"
+    config.vm.provision "shell", path: "recipes/composer.sh"
+    config.vm.provision "shell", path: "recipes/phpcs.sh"
+    config.vm.provision "shell", path: "recipes/phpunit.sh"
 
     #Templates
     config.vm.provision "shell", path: "recipes/configure.sh"

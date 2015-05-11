@@ -26,7 +26,6 @@ This project automates the setup of a development and testing environment for PH
 - Curl
 - OpenSSL
 - zLib
-- XSTL
 - JPEG
 - Free Type
 - libPNG
@@ -80,30 +79,28 @@ This project automates the setup of a development and testing environment for PH
 --enable-intl \
 --enable-libxml \
 --disable-mbregex \
---disable-debug
+--disable-debug \
+--with-mysql \
+--with-pdo-mysql \
+--with-mysqli=/usr/local/mysql/bin/mysql_config
 ```
 
 - PostgreSQL
+- MySQL
 - Nginx
+- PHPUnit
+- Composer
+- PHP Code Sniffer
 
 ## TODO
 
-- Composer
-- PHPUnit
-- MySQL
 - Mongo
 - FreeTDS
 - Instant Client
-
-- libXpm
 
 - PHP
 ```
 --with-oci8=instantclient,/usr/local/oracle-client-12-1 \
 --with-pdo-oci=instantclient,/usr/local/oracle-client-11-2,10.2.0.4.0 \
 --with-pdo-dblib=/usr/local/freetds/ \
---with-mysql \
---with-pdo-mysql \
---with-mysqli=/usr/local/mysql/bin/mysql_config
---with-xpm-dir=/usr \
 ```

@@ -54,6 +54,5 @@ else
     #Extra: --with-oci8=instantclient,/usr/local/oracle-client-12-1 \
     #       --with-pdo-oci=instantclient,/usr/local/oracle-client-11-2,10.2.0.4.0 \
     #       --with-pdo-dblib=/usr/local/freetds/ \
-    #       --with-xpm-dir=/usr \
     make && make install
 fi
