@@ -96,6 +96,7 @@ This project automates the setup of a development and testing environment for PH
 - Mongo
 - FreeTDS
 - Instant Client
+- Postgres is not connecting
 
 - PHP
 ```
