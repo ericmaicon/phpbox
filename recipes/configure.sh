@@ -30,6 +30,7 @@ cp /usr/src/php-5.5.12/php.ini-production /usr/local/php/etc/php.ini.default
 cp /var/www/recipes/templates/php.ini /usr/local/php/etc/php.ini
 cp /var/www/recipes/templates/php-fpm.conf /usr/local/php/etc/php-fpm.conf
 cp /var/www/recipes/templates/php-fpm.sh /etc/init.d/php-fpm
+export PATH=${PATH}:/usr/local/php/bin
 
 chmod +x /etc/init.d/php-fpm
 

@@ -31,7 +31,6 @@ else
                 --with-gd \
                 --with-gettext \
                 --with-kerberos \
-                --with-xsl \
                 --with-libdir=/lib/x86_64-linux-gnu \
                 --enable-mbstring \
                 --enable-fpm \
