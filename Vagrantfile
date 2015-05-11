@@ -13,24 +13,26 @@ Vagrant.configure(2) do |config|
         vb.customize ["modifyvm", :id, "--memory", "512"]
     end
 
-    config.vm.provision "shell", inline: "yes | aptitude update"
-    config.vm.provision "shell", inline: "yes | aptitude install vim build-essential"
+    config.vm.provision "shell", inline: "yes | sudo aptitude update"
+    config.vm.provision "shell", inline: "yes | sudo aptitude install vim build-essential"
 
     #required by libxpm
-    #config.vm.provision "shell", inline: "yes | aptitude install libx11-dev"
+    #config.vm.provision "shell", inline: "yes | sudo aptitude install libx11-dev"
 
     #required by mcrypt
-    config.vm.provision "shell", inline: "yes | aptitude install libltdl-dev"
+    config.vm.provision "shell", inline: "yes | sudo aptitude install libltdl-dev"
 
     #required by imap
-    config.vm.provision "shell", inline: "yes | aptitude install libpam0g-dev"
+    config.vm.provision "shell", inline: "yes | sudo aptitude install libpam0g-dev"
 
     #required by php curl
-    config.vm.provision "shell", inline: "yes | aptitude install libcurl4-gnutls-dev"
+    config.vm.provision "shell", inline: "yes | sudo aptitude install libcurl4-gnutls-dev"
 
     #required by phpize
-    config.vm.provision "shell", inline: "yes | aptitude install autoconf"
+    config.vm.provision "shell", inline: "yes | sudo aptitude install autoconf"
 
+    #required by mysql
+    config.vm.provision "shell", inline: "yes | sudo aptitude install libaio1 libaio-dev"
 
     config.vm.provision "shell", path: "recipes/libxml.sh"
     #config.vm.provision "shell", path: "recipes/curl.sh"
@@ -53,6 +55,7 @@ Vagrant.configure(2) do |config|
     #instant client
 
     #databases
+    config.vm.provision "shell", path: "recipes/mysql.sh"
     config.vm.provision "shell", path: "recipes/postgresql.sh"
     #mongo
     #mysql

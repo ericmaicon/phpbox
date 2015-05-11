@@ -47,13 +47,13 @@ else
                 --enable-intl \
                 --enable-libxml \
                 --disable-mbregex \
-                --disable-debug
+                --disable-debug \
+                --with-mysql \
+                --with-pdo-mysql \
+                --with-mysqli=/usr/local/mysql/bin/mysql_config
     #Extra: --with-oci8=instantclient,/usr/local/oracle-client-12-1 \
     #       --with-pdo-oci=instantclient,/usr/local/oracle-client-11-2,10.2.0.4.0 \
     #       --with-pdo-dblib=/usr/local/freetds/ \
-    #       --with-mysql \
-    #       --with-pdo-mysql \
-    #       --with-mysqli=/usr/local/mysql/bin/mysql_config
     #       --with-xpm-dir=/usr \
     make && make install
 fi

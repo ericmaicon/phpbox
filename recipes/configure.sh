@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#MySQL
+/etc/init.d/mysql start
+
 #PostgreSQL
 
 if id -u "pgsql" >/dev/null 2>&1; then
